@@ -13,7 +13,9 @@ Sun Jan 19 03:26:54 +08 2020
     rails g model Question module_code:string question_body:text answer_body:text answered:boolean asker_id:string
     
 
-
+2. namespaced controller under api
+3. kiv the controller's index actions should be :
+    respond_with Question.find_by answered: false
 
 # README
 

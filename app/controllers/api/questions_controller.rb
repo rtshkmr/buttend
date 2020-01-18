@@ -4,7 +4,7 @@ class Api::QuestionsController < ApplicationController
   respond_to :json
 
   def index
-    respond_with Question.order(event_date: :DESC)
+    respond_with Question.all
   end
 
   def show
@@ -12,7 +12,7 @@ class Api::QuestionsController < ApplicationController
   end
 
   def create
-    respond_with :api, Question.create(event_params)
+    respond_with :api, Question.create(question_params)
   end
 
   def destroy
@@ -20,15 +20,15 @@ class Api::QuestionsController < ApplicationController
   end
 
   def update
-    event = Question.find(params['id'])
-    event.update(event_params)
-    respond_with Question, json: event
+    question = Question.find(params['id'])
+    question.update(question_params)
+    respond_with Question, json: question
   end
 
     private
 
-  def event_params
-    params.require(:event).permit(
+  def question_params
+    params.require(:question).permit(
       :id,
       :module_code,
       :question_body,
@@ -37,4 +37,4 @@ class Api::QuestionsController < ApplicationController
       :asker_id
     )
   end
-  end
+end
