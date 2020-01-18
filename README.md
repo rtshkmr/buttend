@@ -15,7 +15,8 @@ Sun Jan 19 03:26:54 +08 2020
 
 2. namespaced controller under api
 3. kiv the controller's index actions should be :
-    respond_with Question.find_by answered: false
+    respond_with Question.find_by answered: false   => get a single qns 
+    respond_with Question.all.where(answered: false)  => get all unanswered..
 
 4. hosted on heroku, shall do the completion filtering
 # README
