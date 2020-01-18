@@ -4,7 +4,7 @@ class Api::QuestionsController < ApplicationController
   respond_to :json
 
   def index
-    respond_with Question.all
+    respond_with Question.find_by answered: false
   end
 
   def show

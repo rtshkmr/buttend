@@ -17,6 +17,7 @@ Sun Jan 19 03:26:54 +08 2020
 3. kiv the controller's index actions should be :
     respond_with Question.find_by answered: false
 
+4. hosted on heroku, shall do the completion filtering
 # README
 
 This README would normally document whatever steps are necessary to get the
